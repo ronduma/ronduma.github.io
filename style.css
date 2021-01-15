@@ -9,5 +9,5 @@ body{
 }
 
 .contact-info:hover{
-    animation: bounce;
+    animation: pulse;
 }
