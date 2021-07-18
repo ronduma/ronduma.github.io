@@ -12,23 +12,41 @@ body{
     animation: pulse;
 }
 
+.dropdown{
+    color:snow;
+}
+
 #welcome{
     background-image:url("skyline.jpg");
-    background-position: center 90%;
+    background-position: center 100%;
+    background-size:cover;
+    padding:100px 0 400px;
     height:100%;
-    object-fit:cover;
-    padding:200px 200px;
     background-repeat:no-repeat;
 }
 
 #hello{
     color:snow;
     font-weight:bold;
-    font-size:64pt;
+    font-size:4vw;
     text-align:center;
 }
 
 #helloSub{
     color:snow;
+    font-size:3vw;
     text-align:center;
+}
+
+#spacing{
+    padding-bottom:500px;
+}
+
+#about{
+    padding:00px 0 200px;
+}
+
+#profile-picture{
+    border-radius: 50%;
+    height:200px;
 }
