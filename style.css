@@ -2,6 +2,10 @@ body{
     padding-top: 55px;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 .contact-info{
     color:snow;
     margin-left: 20px;
@@ -10,10 +14,6 @@ body{
 
 .contact-info:hover{
     animation: pulse;
-}
-
-.dropdown{
-    color:snow;
 }
 
 #welcome{
@@ -38,15 +38,19 @@ body{
     text-align:center;
 }
 
-#spacing{
-    padding-bottom:500px;
+#dropdown{
+    color:snow;
 }
 
 #about{
-    padding:00px 0 200px;
+    padding:00px 0 100px;
 }
 
 #profile-picture{
     border-radius: 50%;
     height:200px;
+}
+
+#experience{
+    background-color: gray;
 }
