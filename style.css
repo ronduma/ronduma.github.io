@@ -19,10 +19,11 @@ html{
 #welcome{
     background-image:url("skyline.jpg");
     background-position: center 100%;
+    background-repeat:no-repeat;
     background-size:cover;
     padding:100px 0 400px;
     height:100%;
-    background-repeat:no-repeat;
+    min-height:720px;
 }
 
 #hello{
@@ -38,12 +39,12 @@ html{
     text-align:center;
 }
 
-@media only screen and (max-width:720px){
+@media only screen and (max-width:575px){
     #hello{
-        font-size:65pt;
+        font-size:7vh;
     }
     #helloSub{
-        font-size:5vw;
+        font-size:25pt;
     }
 }
 
