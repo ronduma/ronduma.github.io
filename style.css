@@ -38,9 +38,9 @@ html{
     text-align:center;
 }
 
-@media only screen and (max-width:720px){
+@media only screen and (max-width:540px){
     #hello{
-        font-size:6vw;
+        font-size:200pt;
     }
     #helloSub{
         font-size:5vw;
