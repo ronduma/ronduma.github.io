@@ -38,6 +38,15 @@ html{
     text-align:center;
 }
 
+@media only screen and (max-width:720px){
+    #hello{
+        font-size:6vw;
+    }
+    #helloSub{
+        font-size:5vw;
+    }
+}
+
 #dropdown{
     color:snow;
 }
@@ -53,4 +62,5 @@ html{
 
 #experience{
     background-color: gray;
+    padding:50px 0 50px
 }
