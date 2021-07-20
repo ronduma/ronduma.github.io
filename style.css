@@ -1,57 +1,49 @@
-body{
-    padding-top: 55px;
-}
-
 html{
     scroll-behavior:smooth;
 }
 
-.contact-info{
-    color:snow;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.contact-info:hover{
-    animation: pulse;
-}
-
+    /* welcome section */
 #welcome{
     background-image:url("skyline.jpg");
-    background-position: center 100%;
+    background-position:center 100%;
     background-repeat:no-repeat;
     background-size:cover;
-    padding:100px 0 400px;
     height:100%;
     min-height:720px;
+    overflow-y:hidden;
 }
-
 #hello{
     color:snow;
+    font-size:5rem;
     font-weight:bold;
-    font-size:4vw;
+    padding-top:1.5em;
     text-align:center;
 }
-
+#helloIm{
+    margin-bottom:0px;
+}
 #helloSub{
     color:snow;
-    font-size:3vw;
+    padding-bottom:1em;
     text-align:center;
 }
-
-@media only screen and (max-width:575px){
+@media only screen and (max-width:992px){
     #hello{
-        font-size:7vh;
-    }
-    #helloSub{
-        font-size:25pt;
+        font-size:3rem;
+        padding-top:3em;
     }
 }
-
-#dropdown{
+/* work on hover */
+.contact-info{
+    margin-left:20px;
+    margin-right:20px;
+    padding-bottom:1em;
+}
+.fontawesome{
     color:snow;
 }
 
+    /* about section */
 #about{
     padding:00px 0 100px;
 }
@@ -61,6 +53,7 @@ html{
     height:200px;
 }
 
+    /* experience section */
 #experience{
     background-color: gray;
     padding:50px 0 50px
