@@ -2,59 +2,110 @@ html{
     scroll-behavior:smooth;
 }
 
-    /* welcome section */
+/* welcome section */
 #welcome{
+    background-attachment:scroll;
     background-image:url("skyline.jpg");
-    background-position:center 100%;
-    background-repeat:no-repeat;
+    background-position:center 80%;
     background-size:cover;
-    height:100%;
-    min-height:720px;
-    overflow-y:hidden;
-}
-#hello{
+    background-repeat:no-repeat;
     color:snow;
-    font-size:5rem;
-    font-weight:bold;
-    padding-top:1.5em;
+    height:100vh;
+    min-height:50em;
     text-align:center;
 }
-#helloIm{
-    margin-bottom:0px;
+#welcomeh1{
+    padding-top:10%;
+    font-size:4vw;
 }
-#helloSub{
+p{
+    margin-bottom:0;
+}
+#welcomeh2{
+    font-size:2vw;
+    font-weight:300;
+    padding:1em 0 1em 0;
+}       
+.icons{
     color:snow;
-    padding-bottom:1em;
-    text-align:center;
+    font-size:3vw;
+    padding:0 1rem 0 1rem;
 }
-@media only screen and (max-width:992px){
-    #hello{
-        font-size:3rem;
-        padding-top:3em;
+#dropdown{
+    padding-top:1em;
+    font-size:3.5vw;
+}
+
+/* breakpoints */
+
+/* XX-Large devices (larger desktops)
+No media query since the xxl breakpoint has no upper bound on its width */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    #welcomeh1{
+        padding-top:12%;
+        font-size:5vw;
+    }
+    #welcomeh2{
+        font-size:3vw;
+    }
+    .icons{
+        font-size:4vw;
+    }
+    #dropdown{
+        font-size:4.5vw;
     }
 }
-/* work on hover */
-.contact-info{
-    margin-left:20px;
-    margin-right:20px;
-    padding-bottom:1em;
-}
-.fontawesome{
-    color:snow;
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    #welcomeh1{
+        padding-top:14%;
+        font-size:7vw;
+    } 
+    #welcomeh2{
+        font-size:5vw;
+    }
+    .icons{
+        font-size:6vw;
+    }
+    #dropdown{
+        font-size:6.5vw;
+    }
 }
 
-    /* about section */
-#about{
-    padding:00px 0 100px;
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    #welcomeh1{
+        padding-top:17%;
+        font-size:9vw;
+    }
+    #welcomeh2{
+        font-size:7vw;
+    }
+    .icons{
+        font-size:8vw;
+    }
+    #dropdown{
+        font-size:8.5vw;
+    }
 }
 
-#profile-picture{
-    border-radius: 50%;
-    height:200px;
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    #welcomeh1{
+        padding-top:20%;
+        font-size:11vw;
+    }
+    #welcomeh2{
+        font-size:9vw;
+    }
+    .icons{
+        font-size:11vw;
+    }
+    #dropdown{
+        font-size:11.5vw;
+    }
 }
 
-    /* experience section */
-#experience{
-    background-color: gray;
-    padding:50px 0 50px
-}

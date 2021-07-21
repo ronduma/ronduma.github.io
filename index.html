@@ -5,42 +5,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <!--CSS-->
     <link rel ="stylesheet" href="style.css">
-    <link rel ="stylesheet" href="timeline.css">
-
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel ="stylesheet" href="timeline.css">  
     
     <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/cfb838773a.js" crossorigin="anonymous"></script>
-    
-    <!--Animate.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+    <script src="https://kit.fontawesome.com/cfb838773a.js" crossorigin="anonymous"></script>    
+
   </head>
   <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-      <a href="#" class="navbar-brand">Ron Dumalagan</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+    <nav class="navbar navbar-expand-lg static-top navbar-dark bg-dark">
+      <a href="#" class="navbar-brand ms-4">Ron Dumalagan</a>
+      <!-- hamburger -->
+      <button class="navbar-toggler me-3" data-toggle="collapse" data-target="#navbarMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+      <!-- elements -->
+      <div class="collapse navbar-collapse me-4" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item ms-auto">
             <a href="#about" class="nav-link">About</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ms-auto">
             <a href="#experience" class="nav-link">Experience</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ms-auto">
             <a href="#projects" class="nav-link">Projects</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ms-auto">
             <a href="#activities" class="nav-link">Activities</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ms-auto">
             <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
@@ -48,31 +47,31 @@
     </nav>
 
     <!--Welcome-->
-    <div id="welcome" class="jumbotron">
+    <div id="welcome">
       <!-- container prevents horizontal scroll wheel -->
       <div class="container"> 
-        <div class="row justify-content-center">
-          <h1 id="hello">
-            <p id="helloIm">Hello, I'm</p>
+        <div class="row">
+          <h1 id="welcomeh1">
+            <p>Hello, I'm</p>
             <p>Ron Dumalagan.</p>
           </h1>
         </div>
-        <div class="row justify-content-center">
-          <h2 id="helloSub">Welcome to my side of the Internet!</h2>
+        <div class="row">
+          <h2 id="welcomeh2">Welcome to my side of the Internet!</h2>
         </div>
-        <div class="row justify-content-center">
-          <a href="mailto:rpdumalagan@gmail.com"><i class="fas fa-envelope fa-4x contact-info animate__animated fontawesome"></i></a>
-          <a target="_blank" href="https://www.linkedin.com/in/rondumalagan/"><i class="fab fa-linkedin fa-4x contact-info animate__animated fontawesome"></i></a>
-          <a target="_blank" href="https://www.github.com/ronduma"><i class="fab fa-github fa-4x contact-info animate__animated fontawesome"></i></a>
+        <div>
+          <a href="mailto:rpdumalagan@gmail.com"><i class="fas fa-envelope icons"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/rondumalagan/"><i class="fab fa-linkedin icons"></i></a>
+          <a target="_blank" href="https://www.github.com/ronduma"><i class="fab fa-github icons"></i></a>
         </div>
-        <div class="row justify-content-center">
-          <a href="#about"><i class="fas fa-chevron-circle-down fa-4x fontawesome"></i></a>
+        <div>
+          <a href="#about"><i id="dropdown" class="fas fa-chevron-down icons"></i></a>
         </div>
       </div>
     </div>
 
     <!--About-->
-    <div id="about" class="d-flex justify-content-center">
+    <!-- <div id="about">
       <div class="container">
         <div class="row justify-content-center">
           <h1>About Me</h1>
@@ -85,16 +84,16 @@
           <p></p>
         </div>
       </div>
-    </div>
+    </div> -->
     
     <!--Experience-->
-    <div id="experience" class="d-flex justify-content-center">
+    <!-- <div id="experience" class="d-flex justify-content-center">
       <div class="container">
         <div class="row justify-content-center">
           <h1>Experience</h1>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!--Projects-->
     <div id="projects" class="d-flex justify-content-center">
@@ -111,6 +110,7 @@
       
     </div>
 
+    <!-- Bootstrap JS stuff -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
