@@ -43,14 +43,56 @@ p{
 #profile-picture{
     border-radius:50%;
 }
+#profile-picture::before{
+    border:5px solid black;
+}
 #stevens-link{
     color:#A32638;
+    font-weight:700;
+}
+#clark-link{
+    color:midnightblue;
     font-weight:700;
 }
 
 /* experience section */
 #experience{
-    background-color:#6E7A88;
+    background-color:rgb(102, 102, 102);
+    color:snow;
+}
+.nav-link{
+    color:snow;
+    font-weight:500;
+}
+.nav-link:focus, .nav-link:hover {
+    background-color:lightgray;
+    color: rgb(53, 53, 53);
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color:rgb(53, 53, 53);
+}  
+#msc-link{
+    color:rgb(129, 212, 185);
+}
+#msc-pic{
+    width:20vw;
+}
+#mta-pic{
+    width:5vw;
+}
+#arimed-pic{
+    width:10vw;
+}
+#wotm-pic{
+    width:20vw;
+}
+
+/* contact section */
+#contact{
+    background-color:black;
+}
+.contact-icons{
     color:snow;
 }
 
@@ -74,6 +116,18 @@ No media query since the xxl breakpoint has no upper bound on its width */
     #dropdown{
         font-size:4.5vw;
     }
+    #msc-pic{
+        width:30vw;
+    }
+    #mta-pic{
+        width:10vw;
+    }
+    #arimed-pic{
+        width:15vw;
+    }
+    #wotm-pic{
+        width:25vw;
+    }
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -90,6 +144,15 @@ No media query since the xxl breakpoint has no upper bound on its width */
     }
     #dropdown{
         font-size:6.5vw;
+    }
+    #mta-pic{
+        width:15vw;
+    }
+    #arimed-pic{
+        width:15vw;
+    }
+    #wotm-pic{
+        width:30vw;
     }
 }
 
@@ -111,6 +174,15 @@ No media query since the xxl breakpoint has no upper bound on its width */
     #aboutP{
         text-align:center;
     }
+    #mta-pic{
+        width:25vw;
+    }
+    #arimed-pic{
+        width:25vw;
+    }
+    #wotm-pic{
+        width:35vw;
+    }
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
@@ -129,6 +201,18 @@ No media query since the xxl breakpoint has no upper bound on its width */
         font-size:11.5vw;
     }
     #profile-picture{
+        width:50vw;
+    }
+    #msc-pic{
+        width:70vw;
+    }
+    #mta-pic{
+        width:25vw;
+    }
+    #arimed-pic{
+        width:25vw;
+    }
+    #wotm-pic{
         width:50vw;
     }
 }
