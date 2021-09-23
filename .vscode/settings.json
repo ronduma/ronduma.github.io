@@ -5,6 +5,8 @@
         "sstream": "cpp",
         "cstdlib": "cpp",
         "ostream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "xutility": "cpp",
+        "iomanip": "cpp"
     }
 }
