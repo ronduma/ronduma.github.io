@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
+
+
+a{
+    color:black;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+ul.no-bullets {
+    font-weight:400;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.headerDiv{
+    color:black;
+}
+
+.homeButton {
+    font-family: 'Inter', sans-serif;
+    font-weight:600;
+}
+
+.icons{
+    color: black;
+}
+
+.navLink{
+    text-decoration: none;
+}
+
+.name{
+    font-family: 'Inter', sans-serif;
+}
+
+.pfp{
+    height:100%;
+    width:30vh;
+}
+
+#stevens-link{
+    font-weight:bold;
+    color:#A32638;
+}
+
+#clark-link{
+    font-weight:bold;
+    color:#004380;
+}
