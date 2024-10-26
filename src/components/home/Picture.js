@@ -1,7 +1,16 @@
+import styles from './styles.module.css'
+
+import Image from 'next/image'
+
 function Picture() {
   return (
     <>
-      <img src="/imgs/pfp.png" alt="Ron circa 2024"></img>
+      <Image 
+        src="/imgs/pfp.png" 
+        width={295}
+        height={472}
+        className={styles.picture}
+        alt="Ron circa 2024" />
     </>
   )
 }
