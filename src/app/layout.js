@@ -1,3 +1,5 @@
+import Navbar from '@/components/navbar/Navbar';
+
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -23,6 +25,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* https://dev.to/frehner/css-vh-dvh-lvh-svh-and-vw-units-27k4 */}
+        <Navbar/>
         {children}
       </body>
     </html>

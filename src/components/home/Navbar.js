@@ -10,8 +10,8 @@ function NavLinks() {
     text-xl
   ">
     <Link href="/about">About</Link>
-    <Link href="">Experience</Link>
-    <Link href="">Contact</Link>
+    <Link href="/experience">Experience</Link>
+    <Link href="/contact">Contact</Link>
   </div>
   )
 }

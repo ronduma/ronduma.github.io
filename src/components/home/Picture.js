@@ -6,6 +6,7 @@ function Picture() {
   return (
     <>
       <Image 
+        // src="/imgs/my-new-character.jpg" 
         src="/imgs/pfp.png" 
         width={295}
         height={472}

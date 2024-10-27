@@ -1,19 +1,25 @@
-import Link from 'next/link'
+'use client'
+
+import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
 function Navbar() {
-  return (
-    <div className="
-      grid 
-      grid-cols-3 
-      mt-10
-      place-items-center
-      text-xl
-    ">
-      <Link href="/about">About</Link>
-      <Link href="">Experience</Link>
-      <Link href="">Contact</Link>
+  const pathname = usePathname();
+  if (pathname === "/") return null;
+  else return (
+    <div className="grid grid-cols-2 mt-10 mx-10 text-xl">
+      <div className="flex justify-start">
+        <Link href="/">
+          Ron Dumalagan
+        </Link>
+      </div>
+      <div className="flex justify-end space-x-6">
+        <Link href="/about">About</Link>
+        <Link href="/experience">Experience</Link>
+        <Link href="/contact">Contact</Link>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Navbar;
