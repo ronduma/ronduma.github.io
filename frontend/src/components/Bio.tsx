@@ -7,6 +7,7 @@ import {
   CardMedia,
   Divider,
   Link,
+  Grid2 as Grid,
   Typography,
 } from "@mui/material";
 
@@ -24,85 +25,116 @@ const Bio: React.FC<BioProps> = ({ age }) => {
 
   return (
     <Card sx={{ display: "flex", mx: "auto", my: 6, maxWidth: "40rem" }}>
-      {/* image  */}
-      <CardMedia
-        component="img"
-        image="/imgs/pfp.png"
-        alt="pfp"
-        sx={{
-          height: "23rem",
-          width: "15rem",
-          objectFit: "cover",
-          objectPosition: "100% 0",
-        }}
-      />
-      {/* other content  */}
-      <CardContent
-        sx={{
-          py: 0,
-          flex: "1 0 auto",
-          maxWidth: "calc(40rem - 15rem)", // Account for the image width
-        }}
+      <Grid
+        container
+        direction={{ xs: "column", lg: "row" }}
+        sx={{ mx: "auto" }}
+        spacing={2}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", my: 5 }} gap={1}>
-          <Box sx={{ display: "flex", flexDirection: "row" }} gap={1}>
-            <CakeOutlinedIcon />
-            <Typography component="div" variant="body1">
-              {age}
-            </Typography>
-          </Box>
+        {/* image  */}
+        <CardMedia
+          component="img"
+          image="/imgs/pfp.png"
+          alt="pfp"
+          sx={{
+            height: "23rem",
+            width: "15rem",
+            objectFit: "cover",
+            objectPosition: "100% 0",
+            mx: "auto",
+            my: {xs: 4, lg: 0},
+          }}
+        />
+        {/* other content  */}
+
+        <CardContent
+          sx={{
+            py: 0,
+            flex: "1 0 auto",
+            maxWidth: "calc(40rem - 15rem)", // Account for the image width
+          }}
+        >
+          <Divider sx={{display:{xs:"block", lg:"none"}}}/>
           <Box
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "left", lg: "center" },
+              my: {xs: 2, lg: 5},
+            }}
             gap={1}
           >
-            <PlaceOutlinedIcon />
-            <Typography component="div" variant="body1">
-              New York, NY
+            <Box sx={{ display: "flex", flexDirection: "row" }} gap={1}>
+              <CakeOutlinedIcon />
+              <Typography component="div" variant="body1">
+                {age}
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              gap={1}
+            >
+              <PlaceOutlinedIcon />
+              <Typography component="div" variant="body1">
+                New York, NY
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              gap={1}
+            >
+              <WorkOutlineOutlinedIcon />
+              <Typography component="div" variant="body1">
+                SWE @{" "}
+                <Link
+                  target="_blank"
+                  href="https://www2.deloitte.com/us/en.html"
+                  sx={{ color: theme.palette.text.primary }}
+                >
+                  Deloitte Consulting
+                </Link>
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              gap={1}
+            >
+              <SchoolOutlinedIcon />
+              <Typography component="div" variant="body1">
+                CS @{" "}
+                <Link
+                  target="_blank"
+                  href="https://www.stevens.edu/"
+                  sx={{ color: theme.palette.text.primary }}
+                >
+                  Stevens Institute of Technology
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
+          <Divider />
+          <Box display="flex" flexDirection="column" textAlign="center" my={5}>
+            <Typography variant="body2" sx={{ overflowWrap: "break-word" }}>
+              Jersey-born, Queens-raised, Filipino blood.
+            </Typography>
+            <Typography variant="body2" sx={{ overflowWrap: "break-word" }}>
+              Developing cool full-stack apps for an AI R&D team :^{")"}
             </Typography>
           </Box>
-          <Box
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-            gap={1}
-          >
-            <WorkOutlineOutlinedIcon />
-            <Typography component="div" variant="body1">
-              SWE @{" "}
-              <Link
-                target="_blank"
-                href="https://www2.deloitte.com/us/en.html"
-                sx={{ color: theme.palette.text.primary }}
-              >
-                Deloitte Consulting
-              </Link>
-            </Typography>
-          </Box>
-          <Box
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-            gap={1}
-          >
-            <SchoolOutlinedIcon />
-            <Typography component="div" variant="body1">
-              CS @{" "}
-              <Link
-                target="_blank"
-                href="https://www.stevens.edu/"
-                sx={{ color: theme.palette.text.primary }}
-              >
-                Stevens Institute of Technology
-              </Link>
-            </Typography>
-          </Box>
-        </Box>
-        <Divider />
-        <Box display="flex" flexDirection="column" textAlign="center" my={5}>
-          <Typography variant="body2" sx={{ overflowWrap: "break-word" }}>
-            Jersey-born, Queens-raised, Filipino blood.
-          </Typography>
-          <Typography variant="body2" sx={{ overflowWrap: "break-word" }}>
-            Developing cool full-stack apps for an AI R&D team :^{")"}
-          </Typography>
-        </Box>
-      </CardContent>
+        </CardContent>
+      </Grid>
     </Card>
   );
 };

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 // mui components
@@ -8,6 +8,8 @@ import {
   Box,
   IconButton,
   Link,
+  Menu,
+  MenuItem,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -25,6 +27,15 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -55,6 +66,8 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
             size="large"
             edge="start"
             aria-label="menu"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
             sx={{
               display: { xs: "block", lg: "none" },
               border: 1,
@@ -67,7 +80,59 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
           >
             <MenuIcon />
           </IconButton>
-
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ display: { xs: "block", md: "none" } }}
+          >
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Link
+                href="/#about"
+                onClick={handleSmoothScroll}
+                sx={{ color: theme.palette.text.primary }}
+              >
+                <Typography variant="body1">About</Typography>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Link
+                href="/#experience"
+                onClick={handleSmoothScroll}
+                sx={{ color: theme.palette.text.primary }}
+              >
+                <Typography variant="body1">Experience</Typography>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Link
+                href="/resume"
+                onClick={handleSmoothScroll}
+                sx={{ color: theme.palette.text.primary }}
+              >
+                <Typography variant="body1">Resume</Typography>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Link
+                href="/projects"
+                onClick={handleSmoothScroll}
+                sx={{ color: theme.palette.text.primary }}
+              >
+                <Typography variant="body1">Projects</Typography>
+              </Link>
+            </MenuItem>
+          </Menu>
           <Box
             sx={{
               display: { xs: "none", lg: "flex" },
