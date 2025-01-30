@@ -29,6 +29,7 @@ import ModeToggler from "./components/ModeToggler";
 import Home from "./pages/home/Home";
 import Resume from "./pages/resume/Resume";
 import NotFound from "./pages/NotFound";
+import Test from "./pages/Test";
 
 const AppContent: React.FC = () => {
   const navigate = useNavigate();
@@ -185,6 +186,7 @@ const AppContent: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home theme={theme} />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/test" element={<Test />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>
