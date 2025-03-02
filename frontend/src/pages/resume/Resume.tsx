@@ -1,10 +1,7 @@
 // mui components
-import { 
-  Grid2 as Grid, 
-} from "@mui/material";
+import { Grid2 as Grid } from "@mui/material";
 
 // custom components
-
 
 // props
 
@@ -20,16 +17,16 @@ const Resume = () => {
         justifyContent: "center",
       }}
     >
-      <iframe 
-          id="pdf-iframe"
-          src="/Ron_Dumalagan_Resume.pdf" // ✅ Correct Path
-          allowFullScreen // ✅ Allow fullscreen mode
-          style={{ 
-            border: "none",
-            width:"100%",
-            height:"100vh", 
-          }}
-        />
+      <iframe
+        id="pdf-iframe"
+        src="/Ron_Dumalagan_Resume.pdf"
+        allowFullScreen 
+        style={{
+          border: "none",
+          width: "100%",
+          height: "100vh",
+        }}
+      />
     </Grid>
   );
 };
