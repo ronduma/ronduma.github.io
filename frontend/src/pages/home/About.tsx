@@ -16,17 +16,16 @@ const About = () => {
     <Grid
       container
       size={{ xs: 12 }}
-      id="about"
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         // my: 6,
       }}
     >
-      <Grid size={{ xs: 12 }}>
-        <Typography variant="h2" component="h2" textAlign="center" mx="auto">
+      <Grid size={{ xs: 12 }} id="about" >
+        <Typography variant="h2" component="h2" textAlign="center" mx="auto" mt={10} mb={6}>
           About Me
         </Typography>
         <Bio age={age} />

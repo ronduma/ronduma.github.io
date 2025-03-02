@@ -19,9 +19,9 @@ const NotFound = () => {
         404 Not Found
       </Typography>
       <Box component="img" src="/imgs/404.webp" maxHeight="50vh" />
-      <Typography variant="h6" component="div" sx={{ m: 4, textAlign: "center" }}>
-        Woops. Either this link doesn't exist, or Ron didn't finish this page
-        yet!
+      <Typography variant="h4" component="div" sx={{ m: 4, textAlign: "center", fontWeight: 200 }}>
+        Either this link doesn't exist, or Ron didn't finish this page
+        yet. Woops. 
       </Typography>
     </Grid>
   );

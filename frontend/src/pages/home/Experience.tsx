@@ -18,8 +18,8 @@ const Experience = () => {
         justifyContent: "center",
       }}
     >
-      <Grid size={{ xs: 12 }} sx={{ py: 10 }}>
-        <Typography variant="h2" component="h2" textAlign="center" mx="auto" my={2}>
+      <Grid size={{ xs: 12 }} sx={{ }}>
+        <Typography variant="h2" component="h2" textAlign="center" mx="auto" mt={10} mb={6}>
           Experience
         </Typography>
         <ExperienceTimeline />

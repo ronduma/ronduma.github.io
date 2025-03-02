@@ -24,7 +24,7 @@ const Bio: React.FC<BioProps> = ({ age }) => {
   const theme = useTheme();
 
   return (
-    <Card sx={{ display: "flex", mx: "auto", my: 6, maxWidth: "40rem" }}>
+    <Card sx={{ display: "flex", mx: "auto", maxWidth: "40rem" }}>
       <Grid
         container
         direction={{ xs: "column", lg: "row" }}

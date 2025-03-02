@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 // mui components
@@ -6,10 +6,11 @@ import { Theme, useTheme } from "@mui/material/styles";
 import {
   AppBar,
   Box,
+  Drawer,
   IconButton,
   Link,
-  Menu,
-  MenuItem,
+  List,
+  ListItem,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -27,14 +28,11 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  const [open, setOpen] = useState(false);
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
   };
 
   const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -57,6 +55,50 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
       targetElement?.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const DrawerList = (
+    <Box onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+      <List>
+        <ListItem>
+          <Link
+            href="/#about"
+            onClick={handleSmoothScroll}
+            sx={{ color: theme.palette.text.primary }}
+          >
+            <Typography variant="body1">About</Typography>
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="/#experience"
+            onClick={handleSmoothScroll}
+            sx={{ color: theme.palette.text.primary }}
+          >
+            <Typography variant="body1">Experience</Typography>
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="/resume"
+            onClick={handleSmoothScroll}
+            sx={{ color: theme.palette.text.primary }}
+          >
+            <Typography variant="body1">Resume</Typography>
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="/projects"
+            onClick={handleSmoothScroll}
+            sx={{ color: theme.palette.text.primary }}
+          >
+            <Typography variant="body1">Projects</Typography>
+          </Link>
+        </ListItem>
+      </List>
+    </Box>
+  );
+
   return (
     <Box sx={{ flexGrow: 1, mb: 8 }}>
       <AppBar>
@@ -67,12 +109,9 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
             edge="start"
             aria-label="menu"
             aria-haspopup="true"
-            onClick={handleOpenNavMenu}
+            onClick={toggleDrawer(true)}
             sx={{
               display: { xs: "block", lg: "none" },
-              border: 1,
-              borderColor: "inherit",
-              borderRadius: 1,
               py: 0.5,
               px: 1,
               mx: 0.5,
@@ -80,59 +119,9 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{ display: { xs: "block", md: "none" } }}
-          >
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Link
-                href="/#about"
-                onClick={handleSmoothScroll}
-                sx={{ color: theme.palette.text.primary }}
-              >
-                <Typography variant="body1">About</Typography>
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Link
-                href="/#experience"
-                onClick={handleSmoothScroll}
-                sx={{ color: theme.palette.text.primary }}
-              >
-                <Typography variant="body1">Experience</Typography>
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Link
-                href="/resume"
-                onClick={handleSmoothScroll}
-                sx={{ color: theme.palette.text.primary }}
-              >
-                <Typography variant="body1">Resume</Typography>
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Link
-                href="/projects"
-                onClick={handleSmoothScroll}
-                sx={{ color: theme.palette.text.primary }}
-              >
-                <Typography variant="body1">Projects</Typography>
-              </Link>
-            </MenuItem>
-          </Menu>
+          <Drawer open={open} onClose={toggleDrawer(false)}>
+            {DrawerList}
+          </Drawer>
           <Box
             sx={{
               display: { xs: "none", lg: "flex" },
@@ -158,14 +147,14 @@ const Navbar: FC<NavbarProps> = ({ mode, toggle }) => {
           </Box>
           <Box sx={{ display: "flex", mx: "auto" }}>
             <Link
-              href="/"
+              href={location.pathname == "/" ? "#banner" : "/"}
               onClick={handleSmoothScroll}
               sx={{ color: theme.palette.text.primary }}
             >
               <Typography
-                variant="h2"
+                variant="h4"
                 component="div"
-                sx={{ fontSize: "24pt", ml: { md: 0, lg: 4 } }}
+                sx={{ ml: { md: 0, lg: 4 }, fontWeight: "200" }}
               >
                 Ron Dumalagan
               </Typography>
