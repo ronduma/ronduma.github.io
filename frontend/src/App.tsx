@@ -174,7 +174,7 @@ const AppContent: React.FC = () => {
         <Route path="/" element={<Home theme={theme} />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<Test />} />
-        <Route path="*" element={<NotFound />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </ThemeProvider>
   );
