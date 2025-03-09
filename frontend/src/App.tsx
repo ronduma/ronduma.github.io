@@ -29,7 +29,7 @@ import ModeToggler from "./components/ModeToggler";
 // pages
 import Home from "./pages/home/Home";
 import Resume from "./pages/resume/Resume";
-// import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound";
 import Test from "./pages/Test";
 
 const AppContent: React.FC = () => {
